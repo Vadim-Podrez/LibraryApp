@@ -25,22 +25,21 @@ public:
         registrationDate(regDate), returnDate(retDate) {}
 
     const std::string& getUserName() const { return userName; }
-
     void addBook(const std::string& book) {
         borrowedBooks.push_back(book);
     }
 
-    void displayInfo() const {
-        std::cout << "User: " << userName << "\n"
-                  << "Workplace: " << placeOfWork << "\n"
-                  << "Academic Degree: " << academicDegree << "\n"
-                  << "Registration Date: " << registrationDate << "\n"
-                  << "Return Date: " << returnDate << "\n"
-                  << "Borrowed Books: ";
+    std::string getInfo() const {
+        std::string info = "User: " + userName + "\n";
+        info += "Workplace: " + placeOfWork + "\n";
+        info += "Degree: " + academicDegree + "\n";
+        info += "Registration Date: " + registrationDate + "\n";
+        info += "Return Date: " + returnDate + "\n";
+        info += "Books: ";
         for (const auto& book : borrowedBooks) {
-            std::cout << book << ", ";
+            info += book + ", ";
         }
-        std::cout << std::endl;
+        return info;
     }
 };
 

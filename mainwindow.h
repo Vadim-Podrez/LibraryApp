@@ -2,22 +2,30 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLineEdit>
+#include <QTextEdit>
+#include <QPushButton>
+#include "LibraryTicket.h"
+#include <vector>
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void handleAddTicket();
+    void handleDisplayTickets();
+
 private:
-    Ui::MainWindow *ui;
+    QLineEdit *inputField;
+    QTextEdit *outputField;
+    QPushButton *addButton;
+    QPushButton *displayButton;
+
+    std::vector<LibraryTicket> tickets;
 };
+
 #endif // MAINWINDOW_H

@@ -1,5 +1,6 @@
 W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autogen/EWIEGA46WW/moc_mainwindow.cpp: W:/KPI/QT/LibraryApp/mainwindow.h \
   W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autogen/moc_predefs.h \
+  W:/KPI/QT/LibraryApp/LibraryTicket.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/q20functional.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/q20iterator.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/q20memory.h \
@@ -114,6 +115,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtversionchecks.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtypeinfo.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtypes.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qurl.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qutf8stringview.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qvariant.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qvarlengtharray.h \
@@ -133,22 +135,36 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qkeysequence.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qpaintdevice.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qpalette.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qpen.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qpixelformat.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qpixmap.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qpolygon.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qregion.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qrgb.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qrgba64.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtextcursor.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtextformat.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtextoption.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtgui-config.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtguiexports.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtguiglobal.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtransform.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qwindowdefs.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QLineEdit \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QTextEdit \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qlineedit.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qmainwindow.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtextedit.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -166,6 +182,8 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_base.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_lockfree_defines.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h \
@@ -187,9 +205,12 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ios_base.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.tcc \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/localefwd.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memory_resource.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memoryfwd.h \
@@ -197,6 +218,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/nested_exception.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/new_allocator.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream_insert.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h \
@@ -258,6 +280,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception \
@@ -270,7 +293,10 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
@@ -279,6 +305,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
@@ -314,6 +341,8 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
@@ -358,4 +387,5 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
+  W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
+  W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
