@@ -1,0 +1,15 @@
+# ninja log v6
+7	1195	7567704210969583	LibraryApp_autogen/timestamp	3c97d05511b70e0d
+7	1195	7567704210969583	LibraryApp_autogen/mocs_compilation.cpp	3c97d05511b70e0d
+7	1195	7567704210969583	W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autogen/timestamp	3c97d05511b70e0d
+7	1195	7567704210969583	W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autogen/mocs_compilation.cpp	3c97d05511b70e0d
+1207	6741	7567704211940845	CMakeFiles/LibraryApp.dir/LibraryApp_autogen/mocs_compilation.cpp.obj	7d5b744982542cb7
+1208	6872	7567704211950850	CMakeFiles/LibraryApp.dir/main.cpp.obj	15f3b50f429e253d
+1210	6874	7567704211971182	CMakeFiles/LibraryApp.dir/mainwindow.cpp.obj	4f9b7968c0e24285
+409	845	7567705067806614	LibraryApp_autogen/timestamp	3c97d05511b70e0d
+409	845	7567705067806614	LibraryApp_autogen/mocs_compilation.cpp	3c97d05511b70e0d
+409	845	7567705067806614	W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autogen/timestamp	3c97d05511b70e0d
+409	845	7567705067806614	W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autogen/mocs_compilation.cpp	3c97d05511b70e0d
+853	4886	7567705072255145	CMakeFiles/LibraryApp.dir/mainwindow.cpp.obj	4f9b7968c0e24285
+848	5031	7567705072205278	CMakeFiles/LibraryApp.dir/main.cpp.obj	15f3b50f429e253d
+5031	5337	7567705114037766	LibraryApp.exe	60c18aabfb89bd03
