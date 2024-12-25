@@ -1,7 +1,3 @@
-//
-// Created by Happiness on 11/26/2024.
-//
-
 #ifndef LIBRARYTICKET_H
 #define LIBRARYTICKET_H
 
@@ -25,6 +21,11 @@ public:
         registrationDate(regDate), returnDate(retDate) {}
 
     const std::string& getUserName() const { return userName; }
+    const std::string& getPlaceOfWork() const { return placeOfWork; }
+    const std::string& getAcademicDegree() const { return academicDegree; }
+    const std::string& getRegistrationDate() const { return registrationDate; }
+    const std::string& getReturnDate() const { return returnDate; }
+
     void addBook(const std::string& book) {
         borrowedBooks.push_back(book);
     }

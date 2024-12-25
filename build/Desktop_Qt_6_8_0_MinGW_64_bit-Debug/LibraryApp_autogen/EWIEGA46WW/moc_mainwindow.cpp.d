@@ -6,6 +6,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/q20memory.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/q20type_traits.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/q23utility.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qabstractitemmodel.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qalgorithms.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qanystringview.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qarraydata.h \
@@ -20,6 +21,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qbytearraylist.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qbytearrayview.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qcalendar.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qchar.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qcompare.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qcompare_impl.h \
@@ -33,6 +35,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qcontiguouscache.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qdarwinhelpers.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qdatastream.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qdatetime.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qdebug.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qendian.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qexceptionhandling.h \
@@ -47,11 +50,13 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qhash.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qhashfunctions.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qiodevicebase.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qitemselectionmodel.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qiterable.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qiterator.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qlatin1stringview.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qline.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qlist.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qlogging.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qmalloc.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qmap.h \
@@ -72,6 +77,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qprocessordetection.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qrect.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qrefcount.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qregularexpression.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qscopedpointer.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qscopeguard.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qset.h \
@@ -105,6 +111,7 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtdeprecationmarkers.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtenvironmentvariables.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtextstream.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtimezone.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtmetamacros.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtnoop.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -150,19 +157,34 @@ W:/KPI/QT/LibraryApp/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/LibraryApp_autoge
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtguiexports.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtguiglobal.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qtransform.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qvalidator.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qwindowdefs.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qwindowdefs_win.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QDateEdit \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QLineEdit \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QTableWidget \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QTextEdit \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemview.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractslider.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qdatetimeedit.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qlineedit.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qmainwindow.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qrubberband.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qslider.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qstyle.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qstyleoption.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtabbar.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtableview.h \
+  W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtablewidget.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtextedit.h \
   W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/qtwidgets-config.h \

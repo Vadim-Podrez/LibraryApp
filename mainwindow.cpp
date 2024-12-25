@@ -1,52 +1,148 @@
 #include "mainwindow.h"
+#include <QHeaderView>
+#include <QDate>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) {
     setWindowTitle("Library Ticket System");
-    setGeometry(100, 100, 400, 300);
+    setGeometry(100, 100, 700, 500);
+
+    inputNameField = new QLineEdit(this);
+    inputNameField->setPlaceholderText("Enter user name");
+    inputNameField->setGeometry(10, 10, 300, 30);
+
+    inputWorkplaceField = new QLineEdit(this);
+    inputWorkplaceField->setPlaceholderText("Enter workplace");
+    inputWorkplaceField->setGeometry(10, 50, 300, 30);
+
+    inputDegreeField = new QLineEdit(this);
+    inputDegreeField->setPlaceholderText("Enter degree");
+    inputDegreeField->setGeometry(10, 90, 300, 30);
+
+    inputRegDateField = new QDateEdit(this);
+    inputRegDateField->setCalendarPopup(true);
+    inputRegDateField->setDate(QDate::currentDate());
+    inputRegDateField->setGeometry(10, 130, 150, 30);
+
+    inputReturnDateField = new QDateEdit(this);
+    inputReturnDateField->setCalendarPopup(true);
+    inputReturnDateField->setDate(QDate::currentDate().addDays(30));
+    inputReturnDateField->setGeometry(170, 130, 150, 30);
 
     outputField = new QTextEdit(this);
-    outputField->setGeometry(10, 10, 380, 200);
+    outputField->setGeometry(10, 170, 680, 50);
     outputField->setReadOnly(true);
 
-    inputField = new QLineEdit(this);
-    inputField->setGeometry(10, 220, 280, 30);
-
     addButton = new QPushButton("Add Ticket", this);
-    addButton->setGeometry(300, 220, 90, 30);
+    addButton->setGeometry(10, 230, 100, 30);
     connect(addButton, &QPushButton::clicked, this, &MainWindow::handleAddTicket);
 
     displayButton = new QPushButton("Display Tickets", this);
-    displayButton->setGeometry(150, 260, 120, 30);
+    displayButton->setGeometry(120, 230, 120, 30);
     connect(displayButton, &QPushButton::clicked, this, &MainWindow::handleDisplayTickets);
+
+    editButton = new QPushButton("Edit Ticket", this);
+    editButton->setGeometry(250, 230, 100, 30);
+    connect(editButton, &QPushButton::clicked, this, &MainWindow::handleEditTicket);
+
+    removeButton = new QPushButton("Remove Ticket", this);
+    removeButton->setGeometry(360, 230, 120, 30);
+    connect(removeButton, &QPushButton::clicked, this, &MainWindow::handleRemoveTicket);
+
+    tableWidget = new QTableWidget(this);
+    tableWidget->setGeometry(10, 270, 680, 200);
+    tableWidget->setColumnCount(5);
+    tableWidget->setHorizontalHeaderLabels({"Name", "Workplace", "Degree", "Reg. Date", "Return Date"});
+    tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 }
 
-MainWindow::~MainWindow() {}
+MainWindow::~MainWindow() {
+    // Очищення ресурсів, якщо потрібно
+}
 
 void MainWindow::handleAddTicket() {
-    QString userName = inputField->text();
-    if (userName.isEmpty()) {
-        outputField->setText("User name cannot be empty!");
-        return;
-    }
-
-    LibraryTicket newTicket(userName.toStdString(), "Workplace", "PhD", "2024-06-01", "2024-06-30");
-    newTicket.addBook("Book1");
+    LibraryTicket newTicket(
+        inputNameField->text().toStdString(),
+        inputWorkplaceField->text().toStdString(),
+        inputDegreeField->text().toStdString(),
+        inputRegDateField->date().toString("yyyy-MM-dd").toStdString(),
+        inputReturnDateField->date().toString("yyyy-MM-dd").toStdString()
+        );
     tickets.push_back(newTicket);
-
-    outputField->setText("Ticket added for user: " + userName);
-    inputField->clear();
+    updateTable();
 }
 
 void MainWindow::handleDisplayTickets() {
-    outputField->clear();
-    if (tickets.empty()) {
-        outputField->setText("No tickets available.");
+    updateTable();
+    outputField->setText("Displaying all tickets.");
+}
+
+void MainWindow::handleEditTicket() {
+    QString userName = inputNameField->text().trimmed();
+    if (userName.isEmpty()) {
+        outputField->setText("Please enter a user name to edit.");
         return;
     }
 
-    for (const auto& ticket : tickets) {
-        outputField->append(QString::fromStdString(ticket.getInfo()));
-        outputField->append("-----------------------");
+    int index = findTicketIndexByName(userName);
+    if (index == -1) {
+        outputField->setText("Ticket not found for user: " + userName);
+        return;
+    }
+
+    tickets[index] = LibraryTicket(
+        userName.toStdString(),
+        inputWorkplaceField->text().toStdString(),
+        inputDegreeField->text().toStdString(),
+        inputRegDateField->date().toString("yyyy-MM-dd").toStdString(),
+        inputReturnDateField->date().toString("yyyy-MM-dd").toStdString()
+        );
+
+    outputField->setText("Ticket updated for user: " + userName);
+    updateTable();
+}
+
+int MainWindow::findTicketIndexByName(const QString &name) {
+    for (int i = 0; i < tickets.size(); ++i) {
+        if (QString::fromStdString(tickets[i].getUserName()) == name) {
+            return i;
+        }
+    }
+    return -1; // Якщо користувача не знайдено
+}
+
+
+
+void MainWindow::handleRemoveTicket() {
+    QString userName = inputNameField->text().trimmed();
+    if (userName.isEmpty()) {
+        outputField->setText("Please enter a user name to remove.");
+        return;
+    }
+
+    if (tickets.empty()) {
+        outputField->setText("No tickets available to remove.");
+        return;
+    }
+
+    int index = findTicketIndexByName(userName);
+    if (index == -1) {
+        outputField->setText("Ticket not found for user: " + userName);
+        return;
+    }
+
+    tickets.erase(tickets.begin() + index);
+    outputField->setText("Ticket removed for user: " + userName);
+    updateTable();
+}
+
+void MainWindow::updateTable() {
+    tableWidget->setRowCount(tickets.size());
+    for (int i = 0; i < tickets.size(); ++i) {
+        tableWidget->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(tickets[i].getUserName())));
+        tableWidget->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(tickets[i].getPlaceOfWork())));
+        tableWidget->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(tickets[i].getAcademicDegree())));
+        tableWidget->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(tickets[i].getRegistrationDate())));
+        tableWidget->setItem(i, 4, new QTableWidgetItem(QString::fromStdString(tickets[i].getReturnDate())));
     }
 }
