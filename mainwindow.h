@@ -7,8 +7,8 @@
 #include <QPushButton>
 #include <QTableWidget>
 #include <QDateEdit>
-#include "LibraryTicket.h"
 #include <vector>
+#include "LibraryTicket.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -22,6 +22,8 @@ private slots:
     void handleDisplayTickets();
     void handleEditTicket();
     void handleRemoveTicket();
+    void handleSaveToFile();
+    void handleLoadFromFile();
 
 private:
     QLineEdit *inputNameField;
@@ -37,12 +39,13 @@ private:
     QPushButton *displayButton;
     QPushButton *editButton;
     QPushButton *removeButton;
+    QPushButton *saveButton;
+    QPushButton *loadButton;
 
     std::vector<LibraryTicket> tickets;
 
     void updateTable();
     int findTicketIndexByName(const QString &name);
-
 };
 
 #endif // MAINWINDOW_H
