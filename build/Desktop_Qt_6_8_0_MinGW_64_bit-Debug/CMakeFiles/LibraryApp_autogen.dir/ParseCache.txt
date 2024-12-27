@@ -67,6 +67,7 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qmargins.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qmath.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qmetacontainer.h
+ mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qmetaobject.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qmetatype.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qminmax.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtCore/qnamespace.h
@@ -164,6 +165,11 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qvalidator.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qwindowdefs.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtGui/qwindowdefs_win.h
+ mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtSql/QSqlDatabase
+ mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtSql/qsqldatabase.h
+ mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtSql/qtsql-config.h
+ mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtSql/qtsqlexports.h
+ mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtSql/qtsqlglobal.h
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QDateEdit
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QLineEdit
  mdp:W:/KPI/QT/qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow
@@ -208,8 +214,6 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocator.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_base.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_lockfree_defines.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_string.tcc
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/char_traits.h
@@ -231,12 +235,9 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ios_base.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_classes.tcc
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/localefwd.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memory_resource.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/memoryfwd.h
@@ -244,7 +245,6 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/nested_exception.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/new_allocator.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream_insert.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h
@@ -306,7 +306,6 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwchar
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception
@@ -319,10 +318,7 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/type_traits.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/initializer_list
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list
@@ -331,7 +327,6 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/new
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/optional
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h
@@ -367,8 +362,6 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++locale.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/gthr.h
@@ -414,6 +407,5 @@ W:/KPI/QT/LibraryApp/mainwindow.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
- mdp:W:/KPI/QT/qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
 W:/KPI/QT/LibraryApp/main.cpp
 W:/KPI/QT/LibraryApp/mainwindow.cpp

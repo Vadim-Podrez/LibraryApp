@@ -3,14 +3,12 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
 
 class LibraryTicket {
 private:
     std::string userName;
     std::string placeOfWork;
     std::string academicDegree;
-    std::vector<std::string> borrowedBooks;
     std::string registrationDate;
     std::string returnDate;
 
@@ -25,23 +23,6 @@ public:
     const std::string& getAcademicDegree() const { return academicDegree; }
     const std::string& getRegistrationDate() const { return registrationDate; }
     const std::string& getReturnDate() const { return returnDate; }
-
-    void addBook(const std::string& book) {
-        borrowedBooks.push_back(book);
-    }
-
-    std::string getInfo() const {
-        std::string info = "User: " + userName + "\n";
-        info += "Workplace: " + placeOfWork + "\n";
-        info += "Degree: " + academicDegree + "\n";
-        info += "Registration Date: " + registrationDate + "\n";
-        info += "Return Date: " + returnDate + "\n";
-        info += "Books: ";
-        for (const auto& book : borrowedBooks) {
-            info += book + ", ";
-        }
-        return info;
-    }
 };
 
 #endif // LIBRARYTICKET_H

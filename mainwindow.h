@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QTableWidget>
 #include <QDateEdit>
+#include <QtSql/QSqlDatabase>
 #include <vector>
 #include "LibraryTicket.h"
 
@@ -18,12 +19,11 @@ public:
     ~MainWindow();
 
 private slots:
+    void handleConnectToDatabase();
+    void handleSyncWithDatabase();
     void handleAddTicket();
-    void handleDisplayTickets();
-    void handleEditTicket();
-    void handleRemoveTicket();
-    void handleSaveToFile();
-    void handleLoadFromFile();
+    void handleUpdateTicket();
+    void handleDeleteTicket();
 
 private:
     QLineEdit *inputNameField;
@@ -31,21 +31,17 @@ private:
     QLineEdit *inputDegreeField;
     QDateEdit *inputRegDateField;
     QDateEdit *inputReturnDateField;
-
-    QTextEdit *outputField;
+    QLineEdit *inputBorrowedBooksField;
     QTableWidget *tableWidget;
 
     QPushButton *addButton;
-    QPushButton *displayButton;
-    QPushButton *editButton;
-    QPushButton *removeButton;
-    QPushButton *saveButton;
-    QPushButton *loadButton;
+    QPushButton *updateButton;
+    QPushButton *deleteButton;
 
-    std::vector<LibraryTicket> tickets;
+    QSqlDatabase db;
 
+    void setupTable();
     void updateTable();
-    int findTicketIndexByName(const QString &name);
 };
 
 #endif // MAINWINDOW_H

@@ -1,208 +1,167 @@
 #include "mainwindow.h"
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QVBoxLayout>
+#include <QDebug>
 #include <QHeaderView>
-#include <QFile>
-#include <QTextStream>
-#include <QFileDialog>
-#include <QMessageBox>
 
-// Конструктор
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) {
     setWindowTitle("Library Ticket System");
-    setGeometry(100, 100, 700, 600);
+    setGeometry(100, 100, 900, 650);
 
-    // Поля для вводу
+    // Поля вводу
     inputNameField = new QLineEdit(this);
-    inputNameField->setPlaceholderText("Enter user name");
-    inputNameField->setGeometry(10, 10, 300, 30);
+    inputNameField->setPlaceholderText("Enter Name");
+    inputNameField->setGeometry(10, 320, 200, 30);
 
     inputWorkplaceField = new QLineEdit(this);
-    inputWorkplaceField->setPlaceholderText("Enter workplace");
-    inputWorkplaceField->setGeometry(10, 50, 300, 30);
+    inputWorkplaceField->setPlaceholderText("Enter Workplace");
+    inputWorkplaceField->setGeometry(220, 320, 200, 30);
 
     inputDegreeField = new QLineEdit(this);
-    inputDegreeField->setPlaceholderText("Enter degree");
-    inputDegreeField->setGeometry(10, 90, 300, 30);
+    inputDegreeField->setPlaceholderText("Enter Degree");
+    inputDegreeField->setGeometry(430, 320, 200, 30);
 
     inputRegDateField = new QDateEdit(this);
-    inputRegDateField->setCalendarPopup(true);
-    inputRegDateField->setDate(QDate::currentDate());
-    inputRegDateField->setGeometry(10, 130, 150, 30);
+    inputRegDateField->setDisplayFormat("yyyy-MM-dd");
+    inputRegDateField->setGeometry(10, 360, 200, 30);
 
     inputReturnDateField = new QDateEdit(this);
-    inputReturnDateField->setCalendarPopup(true);
-    inputReturnDateField->setDate(QDate::currentDate().addDays(30));
-    inputReturnDateField->setGeometry(170, 130, 150, 30);
+    inputReturnDateField->setDisplayFormat("yyyy-MM-dd");
+    inputReturnDateField->setGeometry(220, 360, 200, 30);
 
-    // Поле для виводу результатів
-    outputField = new QTextEdit(this);
-    outputField->setGeometry(10, 170, 680, 50);
-    outputField->setReadOnly(true);
-
-    // Кнопки
-    addButton = new QPushButton("Add Ticket", this);
-    addButton->setGeometry(10, 230, 100, 30);
-    connect(addButton, &QPushButton::clicked, this, &MainWindow::handleAddTicket);
-
-    displayButton = new QPushButton("Display Tickets", this);
-    displayButton->setGeometry(120, 230, 120, 30);
-    connect(displayButton, &QPushButton::clicked, this, &MainWindow::handleDisplayTickets);
-
-    editButton = new QPushButton("Edit Ticket", this);
-    editButton->setGeometry(250, 230, 100, 30);
-    connect(editButton, &QPushButton::clicked, this, &MainWindow::handleEditTicket);
-
-    removeButton = new QPushButton("Remove Ticket", this);
-    removeButton->setGeometry(360, 230, 120, 30);
-    connect(removeButton, &QPushButton::clicked, this, &MainWindow::handleRemoveTicket);
-
-    saveButton = new QPushButton("Save to File", this);
-    saveButton->setGeometry(490, 230, 100, 30);
-    connect(saveButton, &QPushButton::clicked, this, &MainWindow::handleSaveToFile);
-
-    loadButton = new QPushButton("Load from File", this);
-    loadButton->setGeometry(600, 230, 100, 30);
-    connect(loadButton, &QPushButton::clicked, this, &MainWindow::handleLoadFromFile);
+    inputBorrowedBooksField = new QLineEdit(this); // Поле для позичених книжок
+    inputBorrowedBooksField->setPlaceholderText("Enter Borrowed Books (comma-separated)");
+    inputBorrowedBooksField->setGeometry(430, 360, 440, 30);
 
     // Таблиця
     tableWidget = new QTableWidget(this);
-    tableWidget->setGeometry(10, 270, 680, 300);
-    tableWidget->setColumnCount(5);
-    tableWidget->setHorizontalHeaderLabels({"Name", "Workplace", "Degree", "Reg. Date", "Return Date"});
-    tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    tableWidget->setGeometry(10, 10, 870, 300);
+    setupTable();
+
+    // Кнопки CRUD
+    addButton = new QPushButton("Add Ticket", this);
+    addButton->setGeometry(10, 400, 100, 30);
+    connect(addButton, &QPushButton::clicked, this, &MainWindow::handleAddTicket);
+
+    updateButton = new QPushButton("Update Ticket", this);
+    updateButton->setGeometry(120, 400, 100, 30);
+    connect(updateButton, &QPushButton::clicked, this, &MainWindow::handleUpdateTicket);
+
+    deleteButton = new QPushButton("Delete Ticket", this);
+    deleteButton->setGeometry(230, 400, 100, 30);
+    connect(deleteButton, &QPushButton::clicked, this, &MainWindow::handleDeleteTicket);
+
+    // Автоматичне підключення до бази
+    handleConnectToDatabase();
+    handleSyncWithDatabase();
+}
+MainWindow::~MainWindow() {
+    if (db.isOpen()) {
+        db.close();
+        qDebug() << "Database connection closed.";
+    }
 }
 
-// Деструктор
-MainWindow::~MainWindow() {}
+void MainWindow::handleConnectToDatabase() {
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("library_tickets.db");
 
-// Додавання квитка
+    if (!db.open()) {
+        qDebug() << "Failed to connect to database:" << db.lastError().text();
+        return;
+    }
+
+    QSqlQuery query;
+    query.exec(R"(
+        CREATE TABLE IF NOT EXISTS LibraryTickets (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            workplace TEXT,
+            degree TEXT,
+            reg_date TEXT,
+            return_date TEXT,
+            borrowed_books TEXT
+        )
+    )");
+}
+
+
+void MainWindow::handleSyncWithDatabase() {
+    if (!db.isOpen()) return;
+
+    QSqlQuery query("SELECT * FROM LibraryTickets");
+    tableWidget->setRowCount(0);
+
+    while (query.next()) {
+        int row = tableWidget->rowCount();
+        tableWidget->insertRow(row);
+        tableWidget->setItem(row, 0, new QTableWidgetItem(query.value("id").toString()));
+        tableWidget->setItem(row, 1, new QTableWidgetItem(query.value("name").toString()));
+        tableWidget->setItem(row, 2, new QTableWidgetItem(query.value("workplace").toString()));
+        tableWidget->setItem(row, 3, new QTableWidgetItem(query.value("degree").toString()));
+        tableWidget->setItem(row, 4, new QTableWidgetItem(query.value("reg_date").toString()));
+        tableWidget->setItem(row, 5, new QTableWidgetItem(query.value("return_date").toString()));
+        tableWidget->setItem(row, 6, new QTableWidgetItem(query.value("borrowed_books").toString()));
+    }
+}
+
+
 void MainWindow::handleAddTicket() {
-    LibraryTicket newTicket(
-        inputNameField->text().toStdString(),
-        inputWorkplaceField->text().toStdString(),
-        inputDegreeField->text().toStdString(),
-        inputRegDateField->date().toString("yyyy-MM-dd").toStdString(),
-        inputReturnDateField->date().toString("yyyy-MM-dd").toStdString()
-        );
-    tickets.push_back(newTicket);
-    outputField->setText("Ticket added successfully!");
-    updateTable();
+    if (!db.isOpen()) return;
+
+    QSqlQuery query;
+    query.prepare(R"(
+        INSERT INTO LibraryTickets (name, workplace, degree, reg_date, return_date, borrowed_books)
+        VALUES (:name, :workplace, :degree, :reg_date, :return_date, :borrowed_books)
+    )");
+    query.bindValue(":name", inputNameField->text());
+    query.bindValue(":workplace", inputWorkplaceField->text());
+    query.bindValue(":degree", inputDegreeField->text());
+    query.bindValue(":reg_date", inputRegDateField->date().toString("yyyy-MM-dd"));
+    query.bindValue(":return_date", inputReturnDateField->date().toString("yyyy-MM-dd"));
+    query.bindValue(":borrowed_books", inputBorrowedBooksField->text());
+
+    query.exec();
+    handleSyncWithDatabase();
 }
 
-// Відображення квитків
-void MainWindow::handleDisplayTickets() {
-    updateTable();
-    outputField->setText("All tickets displayed.");
+
+void MainWindow::handleUpdateTicket() {
+    if (!db.isOpen()) return;
+
+    QSqlQuery query;
+    query.prepare(R"(
+        UPDATE LibraryTickets
+        SET workplace = :workplace, degree = :degree, reg_date = :reg_date, return_date = :return_date, borrowed_books = :borrowed_books
+        WHERE name = :name
+    )");
+    query.bindValue(":name", inputNameField->text());
+    query.bindValue(":workplace", inputWorkplaceField->text());
+    query.bindValue(":degree", inputDegreeField->text());
+    query.bindValue(":reg_date", inputRegDateField->date().toString("yyyy-MM-dd"));
+    query.bindValue(":return_date", inputReturnDateField->date().toString("yyyy-MM-dd"));
+    query.bindValue(":borrowed_books", inputBorrowedBooksField->text());
+
+    query.exec();
+    handleSyncWithDatabase();
 }
 
-// Редагування квитка
-void MainWindow::handleEditTicket() {
-    QString userName = inputNameField->text().trimmed();
-    int index = findTicketIndexByName(userName);
-    if (index == -1) {
-        outputField->setText("Ticket not found for user: " + userName);
-        return;
-    }
 
-    tickets[index] = LibraryTicket(
-        userName.toStdString(),
-        inputWorkplaceField->text().toStdString(),
-        inputDegreeField->text().toStdString(),
-        inputRegDateField->date().toString("yyyy-MM-dd").toStdString(),
-        inputReturnDateField->date().toString("yyyy-MM-dd").toStdString()
-        );
+void MainWindow::handleDeleteTicket() {
+    if (!db.isOpen()) return;
 
-    outputField->setText("Ticket updated for user: " + userName);
-    updateTable();
+    QSqlQuery query;
+    query.prepare("DELETE FROM LibraryTickets WHERE name = :name");
+    query.bindValue(":name", inputNameField->text());
+    query.exec();
+    handleSyncWithDatabase();
 }
 
-// Видалення квитка
-void MainWindow::handleRemoveTicket() {
-    QString userName = inputNameField->text().trimmed();
-    int index = findTicketIndexByName(userName);
-    if (index == -1) {
-        outputField->setText("Ticket not found for user: " + userName);
-        return;
-    }
-
-    tickets.erase(tickets.begin() + index);
-    outputField->setText("Ticket removed for user: " + userName);
-    updateTable();
+void MainWindow::setupTable() {
+    tableWidget->setColumnCount(7);
+    tableWidget->setHorizontalHeaderLabels({"ID", "Name", "Workplace", "Degree", "Reg Date", "Return Date", "Borrowed Books"});
+    tableWidget->horizontalHeader()->setStretchLastSection(true);
 }
 
-// Збереження до файлу
-void MainWindow::handleSaveToFile() {
-    QString fileName = QFileDialog::getSaveFileName(this, "Save Tickets", "", "Text Files (*.txt)");
-    if (fileName.isEmpty()) return;
-
-    QFile file(fileName);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        outputField->setText("Failed to open file for writing.");
-        return;
-    }
-
-    QTextStream out(&file);
-    for (const auto& ticket : tickets) {
-        out << QString::fromStdString(ticket.getUserName()) << ","
-            << QString::fromStdString(ticket.getPlaceOfWork()) << ","
-            << QString::fromStdString(ticket.getAcademicDegree()) << ","
-            << QString::fromStdString(ticket.getRegistrationDate()) << ","
-            << QString::fromStdString(ticket.getReturnDate()) << "\n";
-    }
-    file.close();
-    outputField->setText("Tickets saved to file: " + fileName);
-}
-
-// Пошук за ім'ям
-int MainWindow::findTicketIndexByName(const QString &name) {
-    for (int i = 0; i < tickets.size(); ++i) {
-        if (QString::fromStdString(tickets[i].getUserName()) == name) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-// Завантаження з файлу
-void MainWindow::handleLoadFromFile() {
-    QString fileName = QFileDialog::getOpenFileName(this, "Open Tickets", "", "Text Files (*.txt)");
-    if (fileName.isEmpty()) return;
-
-    QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        outputField->setText("Failed to open file for reading.");
-        return;
-    }
-
-    tickets.clear(); // Очищуємо попередні дані
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QStringList fields = in.readLine().split(",");
-        if (fields.size() == 5) {
-            tickets.emplace_back(
-                fields[0].toStdString(), // Name
-                fields[1].toStdString(), // Workplace
-                fields[2].toStdString(), // Degree
-                fields[3].toStdString(), // Reg. Date
-                fields[4].toStdString()  // Return Date
-                );
-        }
-    }
-    file.close();
-    outputField->setText("Tickets loaded from file: " + fileName);
-    updateTable();
-}
-
-// Оновлення таблиці
-void MainWindow::updateTable() {
-    tableWidget->clearContents();
-    tableWidget->setRowCount(tickets.size());
-
-    for (int i = 0; i < tickets.size(); ++i) {
-        tableWidget->setItem(i, 0, new QTableWidgetItem(QString::fromStdString(tickets[i].getUserName())));
-        tableWidget->setItem(i, 1, new QTableWidgetItem(QString::fromStdString(tickets[i].getPlaceOfWork())));
-        tableWidget->setItem(i, 2, new QTableWidgetItem(QString::fromStdString(tickets[i].getAcademicDegree())));
-        tableWidget->setItem(i, 3, new QTableWidgetItem(QString::fromStdString(tickets[i].getRegistrationDate())));
-        tableWidget->setItem(i, 4, new QTableWidgetItem(QString::fromStdString(tickets[i].getReturnDate())));
-    }
-}
